@@ -32,7 +32,6 @@ public class RankingController {
      * Metoda odpowiedzialna za endpoint znajdowania wszystkich rankingów.
      * @return Wszystkie rankingi z bazy (wszystkich uzytkownikow!).
      */
-    @CrossOrigin("**")
     @GetMapping("/all")
     public Iterable<Ranking> findAll(){
         return rankingService.getAll();
@@ -44,7 +43,6 @@ public class RankingController {
      * @param principal Dane zalogowanego uzytkownika
      * @return Ranking jeśli jego właścicielem jest zalogowany uzytkownik, null w przeciwnym wypadku.
      */
-    @CrossOrigin("**")
     @GetMapping("/{id}")
     public Ranking findById(@PathVariable("id") Ranking ranking, Principal principal)
     {
@@ -59,7 +57,6 @@ public class RankingController {
      * @param body Ciało requestu.
      * @return Dane dodanego rankingu (w razie powodzenia) lub inna odpowiedz (w razie niepowodzenia).
      */
-    @CrossOrigin("**")
     @PostMapping
     public ResponseEntity<?> addRanking(@RequestBody RankingDTO body) {
         return ResponseEntity.ok(rankingService.addRanking(body.getUsername(), body.getRankingName()));
@@ -71,7 +68,6 @@ public class RankingController {
      * @param body Cialo z danymi pozycji.
      * @return Dane dodanego albumu lub powiadomienie, że album już jest w rankingu.
      */
-    @CrossOrigin("**")
     @PostMapping("{id}")
     public ResponseEntity<?> addEntry(@PathVariable("id") Ranking ranking, @RequestBody EntryDTO body) {
         if(ranking.checkIfAlbumIsAdded(body.getSpotifyId())){
@@ -86,7 +82,6 @@ public class RankingController {
      * @param rankingId Id rankingu, ktorego pozycje chcemy otrzymac
      * @return Posortowana lista pozycji w rankingu
      */
-    @CrossOrigin("**")
     @GetMapping("{id}/sorted")
     public Iterable<EntryDataDTO> getSortedEntries(@PathVariable("id") Long rankingId){
         return rankingService.getEntries(rankingId);
@@ -98,7 +93,6 @@ public class RankingController {
      * @param entryId Id pozycji, ktora chcemy otrzymac
      * @return Pozycja o zadanym id
      */
-    @CrossOrigin("**")
     @GetMapping("{id}/{entryId}")
     public Entry getEntry(@PathVariable("id") Long rankingId, @PathVariable("id") Long entryId){
         return rankingService.getEntry(entryId);
@@ -120,7 +114,6 @@ public class RankingController {
      * @param principal Zalogowany uzytkownik
      * @return Lista wszystkich rankingow zalogowanego uzytkownika
      */
-    @CrossOrigin("**")
     @GetMapping("/user")
     public Iterable<Ranking> findUserRankings(Principal principal)
     {
@@ -136,7 +129,6 @@ public class RankingController {
      * @param newpos Pozycja albumu po zmianie
      * @return Odpowiedz zawierajaca zaktualizowana liste pozycji lub inny response w razie bledu
      */
-    @CrossOrigin("**")
     @PutMapping("/{id}/{oldpos}/{newpos}")
     public ResponseEntity<?> moveEntry(@PathVariable Long id, @PathVariable Long oldpos, @PathVariable Long newpos){
         return ResponseEntity.ok(rankingService.moveEntry(id, oldpos, newpos));
@@ -147,7 +139,6 @@ public class RankingController {
      * @param id Id rankingu ktory chcemy usunac
      * @return Opowiedz o usunieciu rankingu
      */
-    @CrossOrigin("**")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteRanking(@PathVariable Long id){
         rankingService.deleteRanking(id);
@@ -160,7 +151,6 @@ public class RankingController {
      * @param entry SpotifyId albumu, ktory chcemy usunac
      * @return Odpowiedz o usunieciu rankingu
      */
-    @CrossOrigin("**")
     @DeleteMapping("/{id}/{entry}")
     public ResponseEntity<?> deleteEntry(@PathVariable Long id, @PathVariable String entry)
     {

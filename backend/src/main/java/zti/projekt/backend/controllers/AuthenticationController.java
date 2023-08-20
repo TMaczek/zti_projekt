@@ -23,7 +23,6 @@ public class AuthenticationController {
      * @param body Cialo zadania zawierajace username oraz password
      * @return Obiekt ApplicationUser zarejestrowanego uzytkownika.
      */
-    @CrossOrigin("**")
     @PostMapping("/register")
     public ApplicationUser registerUser(@RequestBody RegistrationDTO body){
         return authenticationService.registerUser(body.getUsername(), body.getPassword());
@@ -34,7 +33,6 @@ public class AuthenticationController {
      * @param body Cialo zadania zawierajace username oraz password.
      * @return Obiekt zawierajacy dane zalogowania.
      */
-    @CrossOrigin("**")
     @PostMapping("/login")
     public LoginResponseDTO loginUser(@RequestBody RegistrationDTO body){
         return authenticationService.loginUser(body.getUsername(), body.getPassword());
