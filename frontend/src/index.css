@@ -1,0 +1,205 @@
+body{
+  margin:0;
+  padding: 0;
+  background-image: linear-gradient(to bottom right, rgb(76, 193, 239), rgb(255, 255, 192));
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type=button]
+ {
+	box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color:#3d94f6;
+	border-radius:9px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:15px;
+	font-weight:bold;
+	padding:3px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+}
+
+.input[type=button]:hover {
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color:#1e62d0;
+}
+
+input[type=button]:active {
+	position:relative;
+	top:1px;
+}
+
+.App {
+  overflow: auto;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.sidebar {
+  float: left;
+  width: 15%;
+  margin:1%;
+  padding: 5px;
+  margin-top: 20px;
+  height: 100%;
+}
+
+.sidebar h1{
+  color:#1e62d0;
+  font-size: 30px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,
+}
+
+.search {
+  float:right;
+  width: 25%;
+  margin: 1%;
+  padding: 5px;
+  top: 46px;
+  margin-top: 20px;
+}
+
+.searchAlbums{
+  width: 85%;
+  border: 1px black solid;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.searchAlbums img{
+  float: left;
+  width: 15%;
+  padding: 5px;
+}
+
+.searchAlbums p, button{
+  padding: 1px;
+}
+
+.searchAlbums p{
+  width: 85%;
+}
+
+.searchAlbums button{
+  float: right;
+  right: 10px;
+  margin-top: -40px;
+}
+
+.search input[type=button]{
+  float: right;
+  right: 10px;
+  margin-top: -30px;
+}
+
+.login{
+  width: 95%;
+}
+
+.menu{
+  width: 95%;
+  margin: 10px;
+}
+
+.menu li{
+  display: block;
+  padding: 5px;
+}
+
+.mainBody{
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #337fed;
+  border-radius: 10px;
+  min-width: 500px;
+}
+
+.App .sidebar, .App .mainBody, .App .bodyNotActive{
+  float: left;
+  margin: 0;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.App .search, .App .searchNotActive{
+  float: right;
+  margin: 0;
+}
+
+.App .sidebar, .App .search, .App .searchNotActive {
+  width: 30%;
+}
+
+.App .mainBody , .App .bodyNotActive{
+  width: 30%;
+}
+
+.rankingList{
+  border: 1px black solid;
+  border-radius: 5px;
+  min-width: 160px;
+  margin-bottom: 10px;
+}
+
+.rankingList p{
+  display: inline-block;
+  width: 100px;
+  margin-left: 5px;
+}
+
+.rankingButtons{
+  display: inline;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+li{
+  list-style-type:decimal;
+  display: list-item;
+  border-radius: 5px;
+  min-width: 450px;
+  margin-bottom: 10px;
+  list-style: none;
+  counter-increment: item;
+  margin-bottom: 5px;
+  background-color: #97c4fe;
+}
+
+li:before {
+  margin-left: 5px;
+  content: counter(item);
+  background:#1e62d0;
+  border-radius: 100%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}
+
+li img, li h3{
+  display: inline-block;
+  margin: 5px;
+}
+
+li h3{
+  max-width: 300px;
+}
+
+li input[type=button]{
+  float: right;
+}
