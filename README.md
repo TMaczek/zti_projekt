@@ -5,7 +5,7 @@ Project made for Advanced Internet Technologies course. Goal was to create a ser
 Project name references one of my favourite [songs](https://www.youtube.com/watch?v=J0DjcsK_-HY).
 
 ## Demo
-Here's demo video of this app, available on YouTube.
+Here's demo video of this app, available [here](https://www.youtube.com/watch?v=z4pwkf0EIJ8) on YouTube.
 
 [![perfect placements demo](https://img.youtube.com/vi/z4pwkf0EIJ8/0.jpg)](https://www.youtube.com/watch?v=z4pwkf0EIJ8)
 
