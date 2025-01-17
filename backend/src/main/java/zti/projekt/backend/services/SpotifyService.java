@@ -33,10 +33,10 @@ public class SpotifyService {
      */
 
     @Value("${property.clientId}")
-    private static String clientId = "9a0ea217cf934c278c32a9f69cf563de";
+    private static String clientId = "";
 
     @Value("${property.clientSecret}")
-    private static String clientSecret = "1357da53f6994d198e51068d3fa56a3e";
+    private static String clientSecret = "";
 
     public SpotifyService(){
         System.out.println(clientId);
